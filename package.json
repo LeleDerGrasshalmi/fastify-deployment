@@ -1,0 +1,24 @@
+{
+  "name": "fastify-deployment",
+  "version": "1.0.0",
+  "description": "Simple fastify plugin to call an endpoint which updates the source code.",
+  "main": "index.js",
+  "scripts": {
+    "build": "yarn tsc",
+    "test": "yarn build && node ./dist/tests/server.js"
+  },
+  "keywords": [
+    "fastify"
+  ],
+  "author": "Lele",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "fastify": "^4.24.3",
+    "typescript": "^5.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0"
+  },
+  "repository": "github:LeleDerGrasshalmi/fastify-deployment"
+}
