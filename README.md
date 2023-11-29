@@ -1,6 +1,6 @@
 # fastify-deployment
 
-This plugin registeres a route, that can be called from e.g. github actions once push to update the source code of the server.
+This plugin registers a route, that can be called from e.g. github actions on push to update the source code of the server.
 
 ## Installation
 
@@ -21,13 +21,15 @@ await server.register(triggerUpdatePlugin, {
   scriptPath: "/path/to/script",
   routeName: "/update", // optional, defaults to /trigger-update
 });
+
+await server.listen({ port: 3000 });
 ```
 
 ## Triggering the update
 
 POST `<protocol>://<host><routePrefix><routeName>`, along with the secret in the `Authorization` header.
 
-Example call with curl:
+Example call with curl with the configuration from above:
 
 ```bash
 curl -i -X POST --header "Authorization: some_random_secret_like_a_uuid" http://localhost:3000/update
